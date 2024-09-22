@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Mailing Kiosk</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Screen 1: Service Selection -->
+    <div id="screen1" class="screen">
+        <div class="progress-bar">Step 1 of 6</div>
+        <h2>Select a Service</h2>
+        <form>
+            <label for="package">Package</label>
+            <input type="radio" id="package" name="service" value="package">
+            <label for="letter">Letter</label>
+            <input type="radio" id="letter" name="service" value="letter">
+            <button type="button" id="confirmService">Confirm</button>
+            
+        </form>
+        
+    </div>
+
+    <!-- Screen 2: Place Package -->
+    <div id="screen2" class="screen" style="display:none;">
+        <div class="progress-bar">Step 2 of 6</div>
+        
+        <h2>Place Your Package</h2>
+    
+        <p>Restricted Items: Flammables, Weapons, etc.</p>
+        <p>Total: 3.00 kg</p>
+
+        <div class="arrow-container">
+           
+            <span>Place your package in the basket</span>
+            <div class="left-arrow"></div>
+        </div>
+
+        <button type="button" id="confirmPackage">Confirm</button>
+        <button type="button" class="backBtn" id="backToService">Back</button>
+    </div>
+
+    <!-- Screen 3: Mailing Options -->
+    <div id="screen3" class="screen" style="display:none;">
+        <div class="progress-bar">Step 3 of 6</div>
+        
+        <h2>Select Mailing Option</h2>
+        <form>
+            <label for="overnight">Overnight: $12</label>
+            <input type="radio" id="overnight" name="mailing" value="overnight">
+            <label for="twoday">2-Day: $8</label>
+            <input type="radio" id="twoday" name="mailing" value="twoday">
+            <label for="ground">Ground: $4.99</label>
+            <input type="radio" id="ground" name="mailing" value="ground">
+            <button type="button" id="confirmMailing">Confirm</button>
+        </form>
+        <button type="button" class="backBtn" id="backToPackage">Back</button>
+    </div>
+
+    <!-- Screen 4: Enter Address -->
+    <div id="screen4" class="screen" style="display:none;">
+        <div class="progress-bar">Step 4 of 6</div>
+        
+        <h2>Enter Address</h2>
+  
+        <form>
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="100 Main St">
+            <label for="zip">Zip Code:</label>
+            <input type="text" id="zip" placeholder="15213">
+            <button type="button" id="confirmAddress">Confirm</button>
+        </form>
+        <button type="button" class="backBtn" id="backToMailing">Back</button>
+    </div>
+
+     <!-- Screen 5: Review Information -->
+     <div id="screen5" class="screen">
+        <div class="progress-bar">Step 5 of 6</div>
+        <h2>Review Your Information</h2>
+        <p><strong>Service:</strong> <span id="reviewService"></span></p>
+        <p><strong>Mailing Option:</strong> <span id="reviewMailing"></span></p>
+        <p><strong>Address:</strong> <span id="reviewAddress"></span></p>
+        <p><strong>Zip Code:</strong> <span id="reviewZip"></span></p>
+        <button type="button" id="confirmReview">Confirm and Proceed to Payment</button>
+        <button type="button" id="editInfo">Go Back and Edit</button>
+    </div>
+
+    <!-- Screen 6: Payment -->
+    <div id="screen6" class="screen" style="display:none;">
+        <div class="progress-bar">Step 6 of 6</div>
+        
+        <h2>Payment</h2>
+  
+        <label for="card">Enter Card Info:</label>
+        <input type="text" id="card" placeholder="Card Number">
+        <button type="button" id="confirmPayment">Confirm Payment</button>
+    </div>
+
+    <!-- Screen 7: Loading Screen -->
+    <div id="screen7" class="screen">
+        <h2>Please wait...</h2>
+        <p>We are processing your payment. This may take a few moments.</p>
+        <div class="loader"></div> 
+    </div>
+
+    <!-- Screen 8: Insufficient Funds -->
+    <div id="screen8" class="screen">
+        <h2>Sorry!</h2>
+        <p>Your card does not have enough funds to complete this transaction.</p>
+        <p>Please try a different payment method or contact your bank.</p>
+        <button type="button" class="backBtn" id="backToPay">Back</button>
+    </div>
+
+    <!-- Screen 9: Completion -->
+    <div id="screen9" class="screen" style="display:none;">
+        <h2>Thank you for using the kiosk!</h2> 
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
